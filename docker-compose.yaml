@@ -109,6 +109,20 @@ services:
       timeout: 5s
       retries: 10
 
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 5050:5050
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
+      PGADMIN_LISTEN_PORT: 5050
+    volumes:
+      - pgadmindata:/var/lib/pgadmin
+    depends_on:
+      - th1-db
+    restart: always
+
   keycloak-db:
     image: postgres:17.4-alpine
     restart: unless-stopped
@@ -150,5 +164,6 @@ services:
 volumes:
   snapshots:
   th1-data:
+  pgadmindata:
   metabase-data:
   keycloak-data:
