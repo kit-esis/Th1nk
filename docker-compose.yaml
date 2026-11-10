@@ -112,7 +112,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     ports:
-      - 5050:5050
+      - "${PGADMIN_PORT}:5050"
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD}
