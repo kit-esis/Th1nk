@@ -79,7 +79,7 @@ To stop the application, run the following command:
 docker compose -f docker/docker-compose.yaml down
 ```
 
-> **Note:** Please consult the [wiki page](https://github.com/uol-esis/TH1/wiki/Docker) and the local `Readme` in the 
+> **Note:** Please consult the [wiki page](https://github.com/kit-esis/TH1/wiki/Docker) and the local `Readme` in the 
 > `docker` directory for further information about the docker setup.
 
 ## Authentication

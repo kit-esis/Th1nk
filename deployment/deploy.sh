@@ -42,18 +42,18 @@ echo "MB_GENERATED_KEY=<replace me>" >> .env
 if [ "$secured" = true ]; then
     mkdir -p data/realms
 
-    # download file from github.com/uol-esis/th1nk/blob/main/deployment/docker-compose-secured.yaml
-    curl -o docker-compose.yaml https://raw.githubusercontent.com/uol-esis/th1nk/main/deployment/docker-compose-secured.yaml
+    # download file from github.com/kit-esis/th1nk/blob/main/deployment/docker-compose-secured.yaml
+    curl -o docker-compose.yaml https://raw.githubusercontent.com/kit-esis/th1nk/main/deployment/docker-compose-secured.yaml
 
-    # download file for keycloak realm at github.com/uol-esis/th1nk/blob/main/deployment/data/realms/th1nk-realms.json
-    curl -o data/realms/th1nk-realms.json https://raw.githubusercontent.com/uol-esis/th1nk/main/deployment/data/realms/th1nk-realms.json
+    # download file for keycloak realm at github.com/kit-esis/th1nk/blob/main/deployment/data/realms/th1nk-realms.json
+    curl -o data/realms/th1nk-realms.json https://raw.githubusercontent.com/kit-esis/th1nk/main/deployment/data/realms/th1nk-realms.json
 
     docker compose up -d frontend db metabase keycloak
 else
     echo "Please note that this startup does not secure the application. Please read the documentation for more information on how to secure your deployment."
 
-    # download file from github.com/uol-esis/th1nk/blob/main/deployment/docker-compose.yaml
-    curl -o docker-compose.yaml https://raw.githubusercontent.com/uol-esis/th1nk/main/deployment/docker-compose.yaml
+    # download file from github.com/kit-esis/th1nk/blob/main/deployment/docker-compose.yaml
+    curl -o docker-compose.yaml https://raw.githubusercontent.com/kit-esis/th1nk/main/deployment/docker-compose.yaml
 
     docker compose up -d frontend db metabase
 fi

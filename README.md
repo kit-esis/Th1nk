@@ -16,7 +16,7 @@ Th1nk simplifies extracting and visualizing data from messy Excel files.
 ### 1. Clone the repository
 
 ```console
-$ git clone -b th1nk-ce --single-branch https://github.com/uol-esis/Th1nk.git th1nk-ce
+$ git clone -b th1nk-ce --single-branch https://github.com/kit-esis/Th1nk.git th1nk-ce
 $ cd th1nk-ce
 ```
 
