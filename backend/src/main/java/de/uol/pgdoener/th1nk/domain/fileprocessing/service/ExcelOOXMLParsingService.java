@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -102,9 +103,12 @@ public class ExcelOOXMLParsingService {
         String[][] result = new String[rows][cols];
 
         for (int i = 0; i < rows; i++) {
+            // rows can be shorter than the widest row when trailing cells are empty
+            Arrays.fill(result[i], EMPTY);
             List<String> row = sheetData.get(i);
             for (int j = 0; j < row.size(); j++) {
-                result[i][j] = row.get(j);
+                String value = row.get(j);
+                result[i][j] = value != null ? value : EMPTY;
             }
         }
         return result;
